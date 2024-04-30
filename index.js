@@ -57,7 +57,7 @@ firstPage.drawText(name, {
 
   firstPage.drawText(id, {
     x: 330, 
-    y: 245,
+    y: 275,
     size: 15,
   });
 
