@@ -90,7 +90,7 @@ const generatePDF = async (name, id) => {
     color: rgb(68 / 255, 124 / 255, 66 / 255),
   });
 
-  const qrCodeData = `Certificado de:${name}\nCon número de CC: ${id}\nFecha: ${currentTime}\n${IdC}\n`;
+  const qrCodeData = `Certificado de: ${name}\nCon numero de CC: ${id}\nFecha: ${currentTime}\n${IdC}\n`;
   const qrCode = await generateQR(qrCodeData);
 
   const qrCodeImage = await pdfDoc.embedPng(qrCode);
@@ -124,7 +124,7 @@ const generateQR = async (data) => {
 const generateUniqueIdC = () => {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
   const idLength = 20;
-  let id = "ID único del certificado: ";
+  let id = "ID unico del certificado: ";
   for (let i = 0; i < idLength; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
     id += characters[randomIndex];
