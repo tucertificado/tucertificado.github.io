@@ -39,6 +39,13 @@ input[name="Name"]{
     border-bottom: 1px solid #a2bf21;
 }
 
+input[name="ID"]{
+    font-size: large;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #a2bf21;
+}
+
 button {
     background: #a2bf21;
     color: #ffff;
