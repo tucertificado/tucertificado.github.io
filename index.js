@@ -79,7 +79,6 @@ const generatePDF = async (name, id) => {
     x: 55,
     y: 75,
     size: 10,
-    color: rgb(68 / 255, 124 / 255, 66 / 255),
   });
 
   const currentTime = new Date().toLocaleString();
@@ -87,7 +86,6 @@ const generatePDF = async (name, id) => {
     x: 55,
     y: 90,
     size: 10,
-    color: rgb(68 / 255, 124 / 255, 66 / 255),
   });
 
   const qrCodeData = `Certificado de: ${name}\nCon numero de CC: ${id}\nFecha: ${currentTime}\n${IdC}\n`;
