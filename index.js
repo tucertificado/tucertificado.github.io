@@ -77,14 +77,14 @@ const generatePDF = async (name, id) => {
 
   firstPage.drawText(IdC, {
     x: 55,
-    y: 75,
+    y: 70,
     size: 10,
   });
 
   const currentTime = new Date().toLocaleString();
   firstPage.drawText(currentTime, {
     x: 55,
-    y: 90,
+    y: 55,
     size: 10,
   });
 
@@ -97,7 +97,7 @@ const generatePDF = async (name, id) => {
 
   firstPage.drawImage(qrCodeImage, {
     x: 55,
-    y: 115,
+    y: 85,
     width: qrCodeWidth,
     height: qrCodeHeight,
   });
