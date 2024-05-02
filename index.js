@@ -64,9 +64,9 @@ const generatePDF = async (name, id) => {
   });
 
   firstPage.drawText(id, {
-    x: 330, 
+    x: centerX, 
     y: 245,
-    size: 15,
+    size: 18,
   });
 
   const pdfBytes = await pdfDoc.save();
