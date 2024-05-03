@@ -22,11 +22,11 @@ submitBtn.addEventListener("click", () => {
 });
 
 const validateName = (name) => {
-  return /^[a-zA-Z\s]+$/.test(name);
+  return /^[a-zA-Z\s]{1,30}$/.test(name);
 }
 
 const validateID = (id) => {
-  return /^\d+$/.test(id);
+  return /^\d{6,12}$/.test(id);
 }
 
 const generatePDF = async (name, id) => {
@@ -52,8 +52,13 @@ const generatePDF = async (name, id) => {
 
   const nameTextWidth = CenturyGothic.widthOfTextAtSize(name, textSize);
   const nameTextHeight = CenturyGothic.widthOfTextAtSize(name, textSize);
-  const idTextWidth = CenturyGothic.widthOfTextAtSize(id, textSize);
+  const idTextWidth = CenturyGothic.widthOfTextAtSize(id, 15);
   const idTextHeight = CenturyGothic.widthOfTextAtSize(id, textSize);
+
+  const centerXName = (pageWidth - nameTextWidth) / 2;
+  const centerXId = (pageWidth - idTextWidth) / 2;
+
+  const idOffset = (nameTextWidth - idTextWidth) / 2 * 0.08;
 
   const IdC = generateUniqueIdC();
   const idCTextWidth = CenturyGothic.widthOfTextAtSize(IdC, textSize);
@@ -61,18 +66,20 @@ const generatePDF = async (name, id) => {
   const totalTextWidth = Math.max(nameTextWidth, idTextWidth);
   const totalTextHeight = Math.max(nameTextHeight, idTextHeight);
   const centerX = (pageWidth - totalTextWidth) / 2;
-  const centerY = (pageHeight - totalTextHeight) / 2;
+  
+  const nameY = 270;
+  const idY = 245;
 
   firstPage.drawText(name, {
-    x: centerX,
-    y: 270,
+    x: centerXName,
+    y: nameY,
     size: textSize,
   });
 
   firstPage.drawText(id, {
-    x: centerX, 
-    y: 245,
-    size: 18,
+    x: centerXId + idOffset, 
+    y: idY,
+    size: 15,
   });
 
   firstPage.drawText(IdC, {
