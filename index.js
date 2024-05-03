@@ -26,7 +26,7 @@ const validateName = (name) => {
 }
 
 const validateID = (id) => {
-  return /^\d{6,12}$/.test(id);
+  return /^\d{7,10}$/.test(id);
 }
 
 const generatePDF = async (name, id) => {
