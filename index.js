@@ -22,11 +22,11 @@ submitBtn.addEventListener("click", () => {
 });
 
 const validateName = (name) => {
-  return /^[a-zA-Z\s]{1,30}$/.test(name);
+  return /^[a-zA-Z\s]{1,40}$/.test(name);
 }
 
 const validateID = (id) => {
-  return /^\d{7,10}$/.test(id);
+  return /^\d{7,11}$/.test(id);
 }
 
 const generatePDF = async (name, id) => {
